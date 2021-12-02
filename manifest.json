@@ -2,15 +2,17 @@
   "name": "Better Wizemen",
   "description": "Makes wizemen a tad better :)",
   "version": "0.0.1",
-  "manifest_version": 2,
-  "browser_action": {
+  "manifest_version": 3,
+  "action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
   "content_scripts": [
     {
       "matches": [
-        "*://*.wizemen.net/*"
+        "*://psg.wizemen.net/*",
+        "*://psn.wizemen.net/*",
+        "*://pws.wizemen.net/*"
       ],
       "js": [
         "main.js"
@@ -18,9 +20,16 @@
     }
   ],
   "web_accessible_resources": [
-    "injections/noCaptcha.js"
-  ],
-  "permissions": [
-    "*://*.wizemen.net/*"
+    {
+      "resources": [
+        "injections/noCaptcha.js",
+        "injections/tesseract.min.js"
+      ],
+      "matches": [
+        "*://psg.wizemen.net/*",
+        "*://psn.wizemen.net/*",
+        "*://pws.wizemen.net/*"
+      ]
+    }
   ]
 }
