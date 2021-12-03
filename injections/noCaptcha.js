@@ -36,6 +36,7 @@ async function onLoginSuccessBetterWizemen(data, emailId, pwd, rememberMe) {
 		} else if (data === "cantremember") {
 			showMessageDialog("Alert!", "You cannot remember an impersonated account", "warning");
 		} else if (data === "Invalid security Code entered") {
+			await loadNewCaptchaBetterWizemen()
 			await loginBetterWizemen(emailId, pwd, rememberMe)
 		} else {
 			button.removeAttr("disabled");
@@ -120,10 +121,7 @@ const getCaptchaWorkerBetterWizemen = async () => {
 }
 
 async function loginBetterWizemen(emailId, pwd, rememberMe) {
-	await loadNewCaptchaBetterWizemen()
-
 	const workerBetterWizemen = await getCaptchaWorkerBetterWizemen()
-
 	const captcha = await workerBetterWizemen.recognize(document.getElementById('imgCaptcha'), 'eng')
 
 	try {

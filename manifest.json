@@ -1,6 +1,6 @@
 {
   "name": "Better Wizemen",
-  "description": "Makes wizemen a tad better :)",
+  "description": "Adds accessibility options to Wizemen (No captcha, Dark Mode, etc.)",
   "version": "0.0.1",
   "manifest_version": 3,
   "action": {
