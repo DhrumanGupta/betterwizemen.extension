@@ -1,18 +1,17 @@
 {
   "name": "Better Wizemen",
   "description": "Adds accessibility options to Wizemen (No captcha, Dark Mode, etc.)",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "manifest_version": 3,
   "action": {
     "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "popup/popup.html",
+    "default_title": "Better Wizemen"
   },
   "content_scripts": [
     {
       "matches": [
-        "*://psg.wizemen.net/*",
-        "*://psn.wizemen.net/*",
-        "*://pws.wizemen.net/*"
+        "*://*.wizemen.net/*"
       ],
       "js": [
         "main.js"
@@ -22,14 +21,16 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "injections/noCaptcha.js",
-        "injections/tesseract.min.js"
+        "injections/*"
       ],
       "matches": [
-        "*://psg.wizemen.net/*",
-        "*://psn.wizemen.net/*",
-        "*://pws.wizemen.net/*"
+        "*://*.wizemen.net/*"
       ]
     }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting"
   ]
 }

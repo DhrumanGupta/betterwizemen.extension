@@ -1,0 +1,65 @@
+:root {
+    --topBar: #000;
+    --darkBg: #121212;
+    --bg: #1c1c1c;
+    --header: rgb(255, 255, 255);
+    --text: rgba(255, 255, 255, 0.8);
+    --textDanger: #e73548;
+    --textSuccess: #5fce24;
+    --textWarning: #eeba28;
+    --schoolWizeColorcode: black;
+}
+
+body {
+    background-color: var(--bg) !important;
+    color: white !important;
+}
+
+.content-wrapper,
+.learning__outcomes__students .student__box__analytics,
+.compressed__view:before, .bodyofcontent, .wrapper,
+.table > thead > tr > th{
+    background: var(--bg) !important;
+    
+}
+
+h1, h2, h3, h4, h5, h6,
+.nameofWard, #page-dtls-small,
+.sb_nav a, .sb_name,
+#user_email a, #user_email b,
+.breadcrumb li a {
+    color: var(--header) !important;
+}
+
+p, .sb_email,
+.learning__outcomes__box .box__each__cas input{
+    color: var(--text) !important;
+}
+
+.schoolinkkscont, .forshowmore:after, .quoteday,
+.box-body, .product-list-in-box > .item {
+    background: var(--darkBg) !important;
+}
+
+.schoolLinksheader, .box-header.with-border,
+.main-sidebar, .skin-blue .content-header,
+.box__header, .table > thead > tr,
+.sb_nav .active, .sb_nav .sb_nav_link > a:hover {
+    background: var(--topBar) !important;
+}
+
+.text-danger {
+    color: var(--textDanger) !important
+}
+
+.progress-bar-green {
+    background-color: var(--textSuccess) !important
+}
+
+.progress-bar-red {
+    background-color: var(--textDanger) !important
+}
+
+.progress-bar-warning {
+    background-color: var(--textWarning) !important
+}

@@ -183,15 +183,11 @@ async function runTestsBetterWizemen(button) {
 }
 
 function mainBetterWizemen() {
-	// load it early on
-	getCaptchaWorkerBetterWizemen()
 	$("#imgCaptcha").parent().attr('style', 'display: none !important;')
 
 	document.getElementById('betterWizemenButton').onclick = async () => {
 		await runTestsBetterWizemen(button)
 	}
-
-
 }
 
 changeButtonBetterWizemen();

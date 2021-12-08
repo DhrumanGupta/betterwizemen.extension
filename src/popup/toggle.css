@@ -1,0 +1,86 @@
+:root {
+    --toggleIndicatorSize: 24px;
+    --trackHeight: calc(var(--toggleIndicatorSize) + 6px);
+    --trackWidth: calc(var(--toggleIndicatorSize) * 2.5);
+    --highContrastModeSupport: solid 2px transparent;
+    --speed: 200ms;
+}
+
+.toggle {
+    align-items: center;
+    border-radius: 100px;
+    display: flex;
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.toggle:last-of-type {
+    margin: 0;
+}
+
+.toggle__input {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.toggle__input:active + .toggle-track,
+.toggle__input:focus + .toggle-track {
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 2px var(--selected);
+}
+
+.toggle-track {
+    background: var(--background);
+    border: 1px solid var(--selected);
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    height: var(--trackHeight);
+    margin-right: 12px;
+    position: relative;
+    width: var(--trackWidth);
+}
+
+.toggle-indicator {
+    align-items: center;
+    background: var(--selected);
+    border-radius: var(--toggleIndicatorSize);
+    bottom: 3px;
+    display: flex;
+    height: var(--toggleIndicatorSize);
+    justify-content: center;
+    left: 3px;
+    outline: var(--highContrastModeSupport);
+    position: absolute;
+    transition: var(--speed);
+    width: var(--toggleIndicatorSize);
+}
+
+.checkMark {
+    fill: #fff;
+    height: calc(var(--toggleIndicatorSize) - 4px);
+    width: calc(var(--toggleIndicatorSize) - 4px);
+    opacity: 0;
+    transition: opacity var(--speed) ease-in-out;
+}
+
+.toggle__input:checked + .toggle-track .toggle-indicator {
+    background: var(--selected);
+    transform: translateX(calc(var(--trackWidth) - var(--trackHeight)));
+}
+
+.toggle__input:checked + .toggle-track .toggle-indicator .checkMark {
+    opacity: 1;
+    transition: opacity var(--speed) ease-in-out;
+}
+
+@media screen and (-ms-high-contrast: active) {
+    .toggle-track {
+        border-radius: 0;
+    }
+}
