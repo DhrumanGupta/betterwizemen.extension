@@ -1,25 +1,11 @@
 const options = {}
 
-async function getCurrentTab() {
-	let queryOptions = {active: true, currentWindow: true};
-	let [tab] = await chrome.tabs.query(queryOptions);
-	return tab;
-}
-
-const isWizemenDomain = async () => {
-	const domain = (await getCurrentTab()).url;
-	return (new RegExp(/^https:\/\/(.*).wizemen.net/)).test(domain)
-}
 
 document.addEventListener('DOMContentLoaded', async () => {
 	const home = document.getElementById("home")
 	const info = document.getElementById("info")
 	const infoButton = document.getElementById("info-button")
-
 	const darkModeSwitch = document.getElementById("toggle-dark-mode");
-	
-	const isValidDomain = await isWizemenDomain();
-	(isValidDomain ? document.getElementById('website-only') : document.getElementById('non-website')).style = null;
 
 	const result = await chrome.storage.sync.get('options')
     Object.assign(options, result ? result.options : {})
