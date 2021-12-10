@@ -14,7 +14,7 @@
         "*://*.wizemen.net/*"
       ],
       "js": [
-        "main.js"
+        "jquery-3.6.0.min.js", "main.js"
       ]
     }
   ],
@@ -28,8 +28,13 @@
       ]
     }
   ],
+  "background": {
+      "service_worker": "background.js"
+  },
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "alarms",
+    "notifications"
   ]
 }
