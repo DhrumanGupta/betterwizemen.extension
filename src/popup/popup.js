@@ -11,7 +11,7 @@ const isWizemenDomain = async () => {
 	return (new RegExp(/^https:\/\/(.*).wizemen.net/)).test(domain)
 }
 
-document.addEventListener('DOMContentLoaded', async (event) => {
+document.addEventListener('DOMContentLoaded', async () => {
 	const home = document.getElementById("home")
 	const info = document.getElementById("info")
 	const infoButton = document.getElementById("info-button")
@@ -21,13 +21,12 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 	const isValidDomain = await isWizemenDomain();
 	(isValidDomain ? document.getElementById('website-only') : document.getElementById('non-website')).style = null;
 
-	chrome.storage.sync.get('options', (result) => {
-		Object.assign(options, result ? result.options : {})
+	const result = await chrome.storage.sync.get('options')
+    Object.assign(options, result ? result.options : {})
 
-		// Set default values
-		options.isDark = options.isDark !== undefined ? options.isDark : true
-		darkModeSwitch.checked = options.isDark;
-	})
+    // Set default values
+    options.isDark = options.isDark !== undefined ? options.isDark : true
+    darkModeSwitch.checked = options.isDark;
 
 	let homeHidden = false;
 	const hiddenClassName = "hidden"
@@ -45,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 		}
 	}
 
-	darkModeSwitch.onchange = function (e) {
+	darkModeSwitch.onchange = (e) =>  {
 		if (options.isDark === e.target.checked) return;
 		options.isDark = e.target.checked;
 		chrome.storage.sync.set({options})
