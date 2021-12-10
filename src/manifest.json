@@ -32,7 +32,7 @@
       "service_worker": "background.js"
   },
   "permissions": [
-    "tabs",
+    "storage",
     "alarms",
     "notifications"
   ]
