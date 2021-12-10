@@ -8,6 +8,7 @@
     --textSuccess: #5fce24;
     --textWarning: #eeba28;
     --schoolWizeColorcode: black;
+    --linkColor: #5477ea;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 .content-wrapper,
 .learning__outcomes__students .student__box__analytics,
 .compressed__view:before, .bodyofcontent, .wrapper,
-.table > thead > tr > th{
+.table > thead > tr > th, .darkborder {
     background: var(--bg) !important;
     
 }
@@ -27,17 +28,20 @@ h1, h2, h3, h4, h5, h6,
 .nameofWard, #page-dtls-small,
 .sb_nav a, .sb_name,
 #user_email a, #user_email b,
-.breadcrumb li a {
+.breadcrumb li a, .dataTables_length label,
+.dataTables_filter label, table.dataTable thead tr th,
+#DataTables_Table_0_info {
     color: var(--header) !important;
 }
 
 p, .sb_email,
-.learning__outcomes__box .box__each__cas input{
+.learning__outcomes__box .box__each__cas input,
+#tableallclasses tr td.darkborder {
     color: var(--text) !important;
 }
 
 .schoolinkkscont, .forshowmore:after, .quoteday,
-.box-body, .product-list-in-box > .item {
+.box-body, .product-list-in-box > .item, table.dataTable thead tr th {
     background: var(--darkBg) !important;
 }
 
@@ -62,4 +66,9 @@ p, .sb_email,
 
 .progress-bar-warning {
     background-color: var(--textWarning) !important
+}
+
+#tableallclasses tr td.sorting_1 {
+    color: var(--linkColor) !important;
+    text-decoration: underline;
 }
