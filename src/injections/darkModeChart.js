@@ -1,4 +1,7 @@
 (function () {
+    if (typeof Chart === 'undefined'){
+        return
+    }
 	const colorChanges = {
 		'#17a2b8': '#40bbf5',
 		"rgba(211,158,0,0.5)": "#f5c453"
