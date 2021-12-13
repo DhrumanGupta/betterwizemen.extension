@@ -1,7 +1,7 @@
 {
   "name": "Better Wizemen",
   "description": "Adds accessibility options to Wizemen (No captcha, Dark Mode, etc.)",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 3,
   "action": {
     "default_icon": "icon.png",
